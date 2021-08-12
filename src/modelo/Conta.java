@@ -1,19 +1,11 @@
+package modelo;
 
-public class Conta {
+public abstract class Conta {
 
 	private double saldo;
 	private String titular;
 	private int numero;
 	private String agencia;
-
-	public Conta() {
-		super();
-	}
-
-	public Conta(double saldo) {
-
-		this.saldo = saldo;
-	}
 
 	public void sacar(double valor) {
 		saldo = saldo - valor;
@@ -21,6 +13,14 @@ public class Conta {
 
 	public void depositar(double valor) {
 		saldo = saldo + valor;
+
+	}
+
+	public void transfere(double valor, Conta conta) {
+		// Retiro da minha conta
+		sacar(valor);
+		// Deposito na outra conta
+		conta.depositar(valor);
 
 	}
 
@@ -51,5 +51,7 @@ public class Conta {
 	public void setTitular(String titular) {
 		this.titular = titular;
 	}
+	
+	public abstract String getTipo();
 
 }
