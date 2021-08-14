@@ -1,4 +1,5 @@
 package modelo;
+
 public class ContaBeneficio extends Conta {
 
 	public ContaBeneficio() {
@@ -16,6 +17,12 @@ public class ContaBeneficio extends Conta {
 	public String getTipo() {
 
 		return "Conta Benefício";
+	}
+
+	@Override
+	public String toString() {
+
+		return "Conta beneficio número " + getNumero();
 	}
 
 }

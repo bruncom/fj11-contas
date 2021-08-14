@@ -1,18 +1,19 @@
 package modelo;
-public class ContaCorrente extends Conta implements Tributavel {
+
+public class ContaCorrente extends Conta implements Tributavel { //tributavel é uma composição
 
 	public ContaCorrente() {
 		super();
-
+//construtor
 	}
 
 	public ContaCorrente(double valor) {
 		super();
 		super.depositar(valor);
-
+//construção personalizada
 	}
 
-	@Override
+	@Override //prioridade quando existe o mesmo método da classe pai.
 	public void sacar(double valor) {
 		super.sacar(valor + 1);
 	}
@@ -23,8 +24,7 @@ public class ContaCorrente extends Conta implements Tributavel {
 
 	@Override
 	public double getValorImposto() {
-		// TODO Auto-generated method stub
-		return 0;
+		return getSaldo() * 0.01;
 	}
 
 }

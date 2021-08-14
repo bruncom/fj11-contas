@@ -8,6 +8,10 @@ public class TestaConta {
 	public static void main(String[] args) {
 		// Conta c1
 		Conta c1 = new ContaCorrente();
+		Conta c2 = new ContaCorrente();
+		Conta c3 = new ContaCorrente();
+		Conta c4 = new ContaCorrente();
+		Conta c5 = new ContaCorrente();
 		c1.depositar(1200);
 		c1.setTitular("Cliente 1");
 		c1.setAgencia("003");
@@ -38,5 +42,6 @@ public class TestaConta {
 		System.out.println("Seu saldo da conta poupança é de " + cp.getSaldo());
 		System.out.println("Seu saldo da conta corrente é de " + cc.getSaldo());
 
+		System.out.println("Quantidade de contas é "+ Conta.qtd_conta);
 	}
 }
