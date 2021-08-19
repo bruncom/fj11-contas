@@ -2,13 +2,13 @@ package modelo;
 
 public abstract class Conta {
 
-	public static int qtd_conta = 0
-	
+	public static int qtd_conta = 0;
+
 	private double saldo;
 	private String titular;
 	private int numero;
 	private String agencia;
-	
+
 	public Conta() {
 		qtd_conta++;
 	}
@@ -57,7 +57,12 @@ public abstract class Conta {
 	public void setTitular(String titular) {
 		this.titular = titular;
 	}
-	
+
 	public abstract String getTipo();
 
+	@Override
+	public String toString() {
+
+		return "Conta " + getTipo() + " saldo " + getSaldo();
+	}
 }
